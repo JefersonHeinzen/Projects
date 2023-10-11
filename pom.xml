@@ -9,10 +9,10 @@
 	</parent>
 
 	<groupId>com.example</groupId>
-	<artifactId>SpringCsv</artifactId>
+	<artifactId>DbLeas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringCsv</name>
-	<description>SpringCsv</description>
+	<name>DbLeas</name>
+	<description>DbLeas</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
