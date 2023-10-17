@@ -8,8 +8,6 @@ import org.hibernate.annotations.Type;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.UUID;
 
 
 @Builder
@@ -23,14 +21,30 @@ import java.util.UUID;
 @Table(name = "Report")
 public class Report {
 
-
     @Id
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+    @Type(type = "org.hibernate.type.UUIDCharType")
+    @Column(columnDefinition = "varchar(62)")
     private long id;
+
+    @Lob
+    @Column(name = "externalId", columnDefinition = "TEXT")
+    private  String externalId;
+
     @Lob
     @Column(name = "reportCompVline", columnDefinition = "TEXT")
     private String reportCompVline;
+
+    @Lob
+    @Column(name = "reportCtrl3", columnDefinition = "TEXT")
     private String reportCtrl3;
+    @Lob
+    @Column(name = "reportSysimax", columnDefinition = "TEXT")
     private String reportSysimax;
+
+    @Lob
+    @Column(name = "reportWtime", columnDefinition = "TEXT")
     private String reportWtime;
 
     @Lob
@@ -43,12 +57,21 @@ public class Report {
     @Lob
     @Column(name = "reportDropVline", columnDefinition = "TEXT")
     private String reportDropVline;
+
+    @Lob
+    @Column(name = "reportNprog", columnDefinition = "TEXT")
     private String reportNprog;
 
     @Lob
     @Column(name = "reportForzaini", columnDefinition = "TEXT")
     private String reportForzaini;
+
+    @Lob
+    @Column(name = "reportCtrl2", columnDefinition = "TEXT")
     private String reportCtrl2;
+
+    @Lob
+    @Column(name = "reportCtrl1", columnDefinition = "TEXT")
     private String reportCtrl1;
 
     @Lob
@@ -66,6 +89,9 @@ public class Report {
     @Lob
     @Column(name = "reportKmode", columnDefinition = "TEXT")
     private String reportKmode;
+
+    @Lob
+    @Column(name = "reportWeldState", columnDefinition = "TEXT")
     private String reportWeldState;
 
     @Lob
@@ -73,7 +99,7 @@ public class Report {
     private String reportPosini;
 
     @Lob
-    @Column(name = " reportRes", columnDefinition = "TEXT")
+    @Column(name = "reportRes", columnDefinition = "TEXT")
     private String reportRes;
 
     @Lob
@@ -83,6 +109,9 @@ public class Report {
     @Lob
     @Column(name = "reportForzafin", columnDefinition = "TEXT")
     private String reportForzafin;
+
+    @Lob
+    @Column(name = "reportEnergia", columnDefinition = "TEXT")
     private String reportEnergia;
 
     @Lob
@@ -92,7 +121,13 @@ public class Report {
     @Lob
     @Column(name = "reportAlarms", columnDefinition = "TEXT")
     private String reportAlarms;
+
+    @Lob
+    @Column(name = "reportWarnings", columnDefinition = "TEXT")
     private String reportWarnings;
+
+    @Lob
+    @Column(name = "reportAnwld", columnDefinition = "TEXT")
     private String reportAnwld;
 
     @Lob
@@ -106,7 +141,13 @@ public class Report {
     @Lob
     @Column(name = "reportIpre", columnDefinition = "TEXT")
     private String reportIpre;
+
+    @Lob
+    @Column(name = "reportCounter", columnDefinition = "TEXT")
     private String reportCounter;
+
+    @Lob
+    @Column(name = "reportWeldResult", columnDefinition = "TEXT")
     private String reportWeldResult;
     @Lob
     @Column(name = "reportVsec", columnDefinition = "TEXT")
@@ -115,6 +156,9 @@ public class Report {
     @Lob
     @Column(name = "reportDpmax", columnDefinition = "TEXT")
     private String reportDpmax;
+
+    @Lob
+    @Column(name = "reportNwld", columnDefinition = "TEXT")
     private String reportNwld;
 
     @Lob
@@ -124,14 +168,29 @@ public class Report {
     @Lob
     @Column(name = "reportDpmin", columnDefinition = "TEXT")
     private String reportDpmin;
+
+    @Lob
+    @Column(name = "reportPf", columnDefinition = "TEXT")
     private String reportPf;
+
+    @Lob
+    @Column(name = "reportId2", columnDefinition = "TEXT")
     private String reportId2;
+
+    @Lob
+    @Column(name = "reportId1", columnDefinition = "TEXT")
     private String reportId1;
 
     @Lob
     @Column(name = "reportImin", columnDefinition = "TEXT")
     private String reportImin;
+
+    @Lob
+    @Column(name = "reportId4", columnDefinition = "TEXT")
     private String reportId4;
+
+    @Lob
+    @Column(name = "reportId3", columnDefinition = "TEXT")
     private String reportId3;
     @Lob
     @Column(name = "reportResmin", columnDefinition = "TEXT")

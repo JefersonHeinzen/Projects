@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 @EnableScheduling
 @RequiredArgsConstructor
-@Profile("production")
+@Profile("Report")
 public class ReportJobs {
 
     private final ReportService service;
